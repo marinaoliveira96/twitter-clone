@@ -1,6 +1,7 @@
-import { HashRouter as Router, Route, Switch } from "react-router-dom";
-import Auth from "../routes/Auth";
-import Home from "../routes/Home";
+import React, { useState } from 'react';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
+import Auth from 'routes/Auth';
+import Home from 'routes/Home';
 
 const AppRouter = ({ isLoggedIn }) => {
   return (
@@ -13,15 +14,12 @@ const AppRouter = ({ isLoggedIn }) => {
             </Route>
           </>
         ) : (
-          <>
-            <Route exact path="/">
-              <Auth />
-            </Route>
-          </>
+          <Route exact path="/">
+            <Auth />
+          </Route>
         )}
       </Switch>
     </Router>
   );
 };
-
 export default AppRouter;

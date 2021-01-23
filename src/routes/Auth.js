@@ -1,25 +1,21 @@
-import { useState } from "react";
+import React, { useState } from 'react';
 
 const Auth = () => {
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const onChange = (event) => {
-    console.log(event.target.name);
     const {
       target: { name, value },
     } = event;
-
-    if (name === "email") {
+    if (name === 'email') {
       setEmail(value);
-    } else if (name === value) {
+    } else if (name === 'password') {
       setPassword(value);
     }
   };
-
   const onSubmit = (event) => {
     event.preventDefault();
   };
-
   return (
     <div>
       <form onSubmit={onSubmit}>
@@ -48,5 +44,4 @@ const Auth = () => {
     </div>
   );
 };
-
 export default Auth;
